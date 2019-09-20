@@ -11,7 +11,7 @@ var MAX_TIME = getMaxValue(times);
 window.renderStatistics = function (ctx, names, times) {
 
   // Тень облака
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.7)'
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
   ctx.fillRect(110, 20, 420, 270);
 
   // Облако
