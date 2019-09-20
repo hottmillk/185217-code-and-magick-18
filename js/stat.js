@@ -1,5 +1,13 @@
 'use strict';
 
+var HISTOGRAM_HEIGHT = 150;
+var INITIAL_X = 150;
+var INITIAL_Y = 245;
+var COLUMN_INDENT = 90;
+var COLUMN_WIDTH = 40;
+var LINE_HEIGHT = 20;
+var MAX_TIME = getMaxValue(times);
+
 window.renderStatistics = function (ctx, names, times) {
 
   // Тень облака
@@ -39,24 +47,16 @@ window.renderStatistics = function (ctx, names, times) {
   };
 
   // Гистограмма
-  var histogramHeight = 150;
-  var initialX = 150;
-  var initialY = 245;
-  var columnIndent = 90;
-  var columnWidth = 40;
-  var lineHeight = 20;
-  var maxTime = getMaxValue(times);
-
   for (var j = 0; j < times.length; j++) {
     var playerTime = Math.round(times[j]);
-    var columnHeight = playerTime * histogramHeight / (maxTime - 0);
+    var columnHeight = playerTime * HISTOGRAM_HEIGHT / (MAX_TIME - 0);
 
     ctx.fillStyle = getPlayerColor(names[j]);
-    ctx.fillRect(initialX + j * columnIndent, initialY, columnWidth, columnHeight * (-1));
+    ctx.fillRect(INITIAL_X + j * COLUMN_INDENT, INITIAL_Y, COLUMN_WIDTH, columnHeight * (-1));
 
     ctx.fillStyle = '#000000';
-    ctx.fillText(playerTime, initialX + j * columnIndent, initialY - columnHeight - lineHeight / 2);
-    ctx.fillText(names[j], initialX + j * columnIndent, initialY + lineHeight);
+    ctx.fillText(playerTime, INITIAL_X + j * COLUMN_INDENT, INITIAL_Y - columnHeight - LINE_HEIGHT / 2);
+    ctx.fillText(names[j], INITIAL_X + j * COLUMN_INDENT, INITIAL_Y + LINE_HEIGHT);
   }
 
 };
