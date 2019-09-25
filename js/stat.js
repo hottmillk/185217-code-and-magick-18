@@ -6,7 +6,7 @@ var INITIAL_Y = 245;
 var COLUMN_INDENT = 90;
 var COLUMN_WIDTH = 40;
 var LINE_HEIGHT = 20;
-var MAX_TIME = getMaxValue(times);
+
 
 window.renderStatistics = function (ctx, names, times) {
 
@@ -47,6 +47,7 @@ window.renderStatistics = function (ctx, names, times) {
   };
 
   // Гистограмма
+  var MAX_TIME = getMaxValue(times);
   for (var j = 0; j < times.length; j++) {
     var playerTime = Math.round(times[j]);
     var columnHeight = playerTime * HISTOGRAM_HEIGHT / (MAX_TIME - 0);
