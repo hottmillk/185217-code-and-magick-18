@@ -9,7 +9,6 @@ var similarTemplate = document.querySelector('#similar-wizard-template').content
 var similarWizard = similarTemplate.querySelector('.setup-similar-item');
 var similarList = document.querySelector('.setup-similar-list');
 var fragment = document.createDocumentFragment();
-var wizards = [];
 
 setupWindow.classList.remove('hidden');
 
@@ -34,9 +33,8 @@ for (var i = 0; i < 4; i++) {
     eyesColor: eyesColor[getRandomValue(eyesColor)]
   };
 
-  wizards[i] = wizard;
 
-  fragment.appendChild(generateWizard(wizards[i]));
+  fragment.appendChild(generateWizard(wizard));
 
 };
 similarList.appendChild(fragment);
