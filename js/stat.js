@@ -26,7 +26,7 @@ window.renderStatistics = function (ctx, names, times) {
 
 
   // Максимальное значение
-  var getMaxValue = function(anyArray) {
+  var getMaxValue = function (anyArray) {
     var maxValue = -1;
 
     for (var index = 0; index < anyArray.length; index++) {
@@ -38,7 +38,7 @@ window.renderStatistics = function (ctx, names, times) {
   };
 
   // Цвет
-  var getPlayerColor = function(playerName) {
+  var getPlayerColor = function (playerName) {
     if (playerName === 'Вы') {
       return 'rgba(255, 0, 0, 1)';
     } else {
